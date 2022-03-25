@@ -1,3 +1,4 @@
+*,
 *::before,
 *::after {
     box-sizing: border-box;
@@ -18,8 +19,8 @@ body {
     display: grid;
     grid-template-columns: repeat(var(--grid-size), var(--cell-size));
     grid-template-rows: repeat(var(--grid-size), var(--cell-size));
-    gap: var(--cell-gap);
     background-color: #ccc;
+    gap: var(--cell-gap);
     border-radius: 1vmin;
     padding: var(--cell-gap);
     position: relative;
@@ -39,8 +40,6 @@ body {
     height: var(--cell-size);
     background-color: red;
     border-radius: 1vmin;
-
-    /* calculate positions from top left corers */
     top: calc(
         var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap)
     );
@@ -50,9 +49,7 @@ body {
     font-weight: bold;
     background-color: hsl(200, 50%, var(--background-lightness));
     color: hsl(200, 25%, var(--text-lightness));
-
-    animation: show 200m ease-in-out;
-    /* for smooth x & y transitions  */
+    animation: show 200ms ease-in-out;
     transition: 100ms ease-in-out;
 }
 
