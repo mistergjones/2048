@@ -8,6 +8,21 @@
         <script src="script.js" type="module"></script>
     </head>
     <body>
+        <div id="instructions">
+            <h3>2048</h3>
+            <p>Use your arrow keys to move the tiles.</p>
+            <p>Tiles with the same number merge into one when they touch.</p>
+            <p>Add them up to reach 2048!</p>
+        </div>
+        <!-- <button id="myBtn">Open Modal</button> -->
+        <div id="gameOverModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">No</span>
+                <span class="close">Yes</span>
+                <p>Play Again?</p>
+            </div>
+        </div>
         <div id="gameBoard"></div>
     </body>
 </html>

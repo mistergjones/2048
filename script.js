@@ -15,7 +15,6 @@ function setupInput() {
 }
 
 async function handleInput(e) {
-    console.log(e.key);
     switch (e.key) {
         case "ArrowUp":
             if (!canMoveUp()) {
@@ -60,7 +59,30 @@ async function handleInput(e) {
 
     if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
         newTile.waitForTransition(true).then(() => {
-            alert("You Lose");
+            // logic to display the modal to playagain.
+            var modal = document.getElementById("gameOverModal");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            var span2 = document.getElementsByClassName("close")[1];
+
+            modal.style.display = "block";
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            };
+
+            span2.onclick = function () {
+                modal.style.display = "none";
+                window.location.reload();
+            };
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            };
         });
         return;
     }
